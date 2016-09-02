@@ -75,9 +75,9 @@
 
     <div class="content">
         <div class="title m-b-md">
-            About Me!
+            About {{$data['fullname']}}
         </div>
-        <p>Hello my name is Rizki and I excited to learn Laravel!</p><br/>
+        <p>Email me at {{$data['email']}}</p><br/>
     </div>
 </div>
 </body>

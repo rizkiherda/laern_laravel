@@ -23,12 +23,20 @@ class PagesController extends Controller {
 
     public function getAbout()
     {
-        return view('pages.about');
+        $first = 'Rizki';
+        $last = 'Herdatullah';
+
+        $fullname = $first . " " . $last;
+        $email = "rizkiherda@gmail.com";
+        $data = [];
+        $data ['email'] = $email;
+        $data['fullname'] = $fullname;
+        return view('pages.about')->withData($data); # This is the easiest way to to send a variable to views
     }
 
     public function getContact()
     {
         return view('pages.contact');
     }
-    
+
 }
