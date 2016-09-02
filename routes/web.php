@@ -11,16 +11,9 @@
 |
 */
 /*  These are Route for our controllers
-    Route is procedural check so make sure it */
+    Route is procedural check so make sure it
+    Always call controller to show anything to the world */
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/contact', 'PagesController@getContact');
+Route::get('/about', 'PagesController@getAbout');
+Route::get('/', 'PagesController@getIndex');
