@@ -14,11 +14,14 @@
 # This is for make controller just run only on the directory of it belong
 namespace App\Http\Controllers;
 
+use App\Post;
+
 class PagesController extends Controller {
     # Use get, post, put, etc on every method
     public function getIndex()
     {
-        return view('pages.welcome');
+        $posts = Post::orderBy('created_at', 'desc')->limit(4)->get();
+        return view('pages.welcome')->withPosts($posts);
     }
 
     public function getAbout()
