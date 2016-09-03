@@ -12,8 +12,10 @@
 */
 /*  These are Route for our controllers
     Route is procedural check so make sure it
-    Always call controller to show anything to the world */
+    Always call controller to show anything to the world
+    Use php artisan route:list to show all routes configuration on terminal*/
 
 Route::get('/contact', 'PagesController@getContact');
 Route::get('/about', 'PagesController@getAbout');
 Route::get('/', 'PagesController@getIndex');
+Route::resource('posts', 'PostController');
