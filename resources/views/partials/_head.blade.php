@@ -6,13 +6,14 @@
 <!-- CHANGE THIS TITLE FOR EACH PAGE -->
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+{{Html::style('css/bootstrap.min.css')}}
+{{Html::style('css/styles.css')}}
 
 @yield('stylesheets')
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
-<script src="{{asset('js/html5shiv.min.js')}}"></script>
-<script src="{{asset('js/respond.min.js')}}"></script>
+{{Html::script('js/html5shiv.min.js')}}
+{{Html::script('js/respond.min.js')}}
 <![endif]-->
