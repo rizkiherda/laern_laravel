@@ -13,7 +13,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      *
-     * Use php artisan make:controller PostContoller --resource
+     * Use php artisan make:controller PostController --resource
      */
     public function index()
     {
@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
