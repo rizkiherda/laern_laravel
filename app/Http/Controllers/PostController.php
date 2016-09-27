@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Post;
 use Session;
 
@@ -45,10 +43,10 @@ class PostController extends Controller
     public function store(Request $request)
     {
         // validate the data
-        $this->validate($request, array(
+        $this->validate($request, [
             'title' => 'required|max:255',
-            'body'  => 'required'
-        ));
+            'body'  => 'required',
+        ]);
 
         // store in the database
         $post = new Post;
@@ -72,6 +70,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+
         return view('posts.show')->withPost($post);
     }
 
@@ -100,10 +99,10 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         // Validate the data
-        $this->validate($request, array(
+        $this->validate($request, [
             'title' => 'required|max:255',
-            'body'  => 'required'
-        ));
+            'body'  => 'required',
+        ]);
 
         // Save the data to the database
         $post = Post::find($id);
@@ -133,6 +132,7 @@ class PostController extends Controller
         $post->delete();
 
         Session::flash('success', 'The post was successfully deleted.');
+
         return redirect()->route('posts.index');
     }
 }
